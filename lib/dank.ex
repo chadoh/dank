@@ -11,7 +11,7 @@ defmodule Dank do
       # Start the Ecto repository
       supervisor(Dank.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(Dank.Endpoint, []),
+      supervisor(Dank.Endpoint, [])
       # Start your own worker by calling: Dank.Worker.start_link(arg1, arg2, arg3)
       # worker(Dank.Worker, [arg1, arg2, arg3]),
     ]
