@@ -22,7 +22,7 @@ defmodule Dank.Web do
 
       import Ecto
       import Ecto.Changeset
-      import Ecto.Query
+      import Ecto.Query, only: [from: 1, from: 2]
     end
   end
 
@@ -32,7 +32,7 @@ defmodule Dank.Web do
 
       alias Dank.Repo
       import Ecto
-      import Ecto.Query
+      import Ecto.Query, only: [from: 1, from: 2]
 
       import Dank.Router.Helpers
       import Dank.Gettext
@@ -67,7 +67,7 @@ defmodule Dank.Web do
 
       alias Dank.Repo
       import Ecto
-      import Ecto.Query
+      import Ecto.Query, only: [from: 1, from: 2]
       import Dank.Gettext
     end
   end

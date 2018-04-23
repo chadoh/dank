@@ -7,6 +7,7 @@ defmodule Dank.Router do
     plug(:fetch_flash)
     plug(:protect_from_forgery)
     plug(:put_secure_browser_headers)
+    plug(Dank.Auth, repo: Dank.Repo)
   end
 
   pipeline :api do
@@ -18,5 +19,6 @@ defmodule Dank.Router do
 
     get("/", PageController, :index)
     resources("/users", UserController, only: [:index, :show, :new, :create])
+    resources("/sessions", SessionController, only: [:new, :create, :delete])
   end
 end
