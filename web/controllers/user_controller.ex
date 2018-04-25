@@ -1,20 +1,18 @@
 defmodule Dank.UserController do
   use Dank.Web, :controller
+  alias Dank.User
 
   plug(:authenticate when action in [:index, :show])
 
   def index(conn, _params) do
-        users = Repo.all(Dank.User)
-        render(conn, "index.html", users: users)
-    end
+    users = Repo.all(Dank.User)
+    render(conn, "index.html", users: users)
   end
 
   def show(conn, %{"id" => id}) do
     user = Repo.get(Dank.User, id)
     render(conn, "show.html", user: user)
   end
-
-  alias Dank.User
 
   def new(conn, _params) do
     changeset = User.changeset(%User{})
