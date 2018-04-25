@@ -21,4 +21,8 @@ defmodule Dank.Router do
     resources("/users", UserController, only: [:index, :show, :new, :create])
     resources("/sessions", SessionController, only: [:new, :create, :delete])
   end
+
+  scope "/manage", Dank do
+    pipe_through([:browser, :authenticate_user])
+  end
 end

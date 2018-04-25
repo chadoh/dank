@@ -14,9 +14,9 @@ defmodule Dank.SessionController do
     end
   end
 
-  def delet(conn, _) do
+  def delete(conn, _) do
     conn
-    |> Dank.Auth.logut()
+    |> Dank.Auth.logout()
     |> redirect(to: page_path(conn, :index))
   end
 end
