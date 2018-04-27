@@ -36,6 +36,8 @@ defmodule Dank.Web do
 
       import Dank.Router.Helpers
       import Dank.Gettext
+      # New import
+      import Dank.Auth, only: [authenticate_user: 2]
     end
   end
 
@@ -58,6 +60,9 @@ defmodule Dank.Web do
   def router do
     quote do
       use Phoenix.Router
+
+      # New import
+      import Dank.Auth, only: [authenticate_user: 2]
     end
   end
 

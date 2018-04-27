@@ -24,5 +24,7 @@ defmodule Dank.Router do
 
   scope "/manage", Dank do
     pipe_through([:browser, :authenticate_user])
+
+    resources("/dispensaries", DispensaryController)
   end
 end

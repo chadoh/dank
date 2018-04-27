@@ -2,7 +2,7 @@ defmodule Dank.UserController do
   use Dank.Web, :controller
   alias Dank.User
 
-  plug(:authenticate when action in [:index, :show])
+  plug(:authenticate_user when action in [:index, :show])
 
   def index(conn, _params) do
     users = Repo.all(Dank.User)
@@ -34,14 +34,14 @@ defmodule Dank.UserController do
     end
   end
 
-  defp authenticate(conn, _opts) do
-    if conn.assigns.current_user do
-      conn
-    else
-      conn
-      |> put_flash(:error, "You must be logged in to access that page")
-      |> redirect(to: page_path(conn, :index))
-      |> halt()
-    end
-  end
+  # defp authenticate(conn, _opts) do
+  #   if conn.assigns.current_user do
+  #     conn
+  #   else
+  #     conn
+  #     |> put_flash(:error, "You must be logged in to access that page")
+  #     |> redirect(to: page_path(conn, :index))
+  #     |> halt()
+  #   end
+  # end
 end
