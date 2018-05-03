@@ -21,6 +21,7 @@ defmodule Dank.DispensaryController do
         conn
         |> put_flash(:info, "Dispensary created successfully.")
         |> redirect(to: dispensary_path(conn, :index))
+
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -46,6 +47,7 @@ defmodule Dank.DispensaryController do
         conn
         |> put_flash(:info, "Dispensary updated successfully.")
         |> redirect(to: dispensary_path(conn, :show, dispensary))
+
       {:error, changeset} ->
         render(conn, "edit.html", dispensary: dispensary, changeset: changeset)
     end
