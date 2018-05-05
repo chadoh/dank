@@ -1,0 +1,33 @@
+<h2>Show review</h2>
+
+<ul>
+
+  <li>
+    <strong>User:</strong>
+    <%= @review.user_id %>
+  </li>
+
+  <li>
+    <strong>Dispensary:</strong>
+    <%= @review.dispensary_id %>
+  </li>
+
+  <li>
+    <strong> dispensary:</strong>
+    <%= @review. dispensary %>
+  </li>
+
+  <li>
+    <strong>Rank:</strong>
+    <%= @review.rank %>
+  </li>
+
+  <li>
+    <strong>Review:</strong>
+    <%= @review.review %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: review_path(@conn, :edit, @review) %>
+<%= link "Back", to: review_path(@conn, :index) %>

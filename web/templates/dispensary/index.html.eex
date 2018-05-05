@@ -1,0 +1,30 @@
+<h2>Listing dispensaries</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for dispensary <- @dispensaries do %>
+    <tr>
+      <td><%= dispensary.name %></td>
+      <td><%= dispensary.location %></td>
+      <td><%= dispensary.description %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: dispensary_path(@conn, :show, dispensary), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: dispensary_path(@conn, :edit, dispensary), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: dispensary_path(@conn, :delete, dispensary), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New dispensary", to: dispensary_path(@conn, :new) %>

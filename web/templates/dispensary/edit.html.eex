@@ -1,0 +1,6 @@
+<h2>Edit dispensary</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: dispensary_path(@conn, :update, @dispensary) %>
+
+<%= link "Back", to: dispensary_path(@conn, :index) %>

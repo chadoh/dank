@@ -3,7 +3,7 @@ defmodule Dank.DispensaryTest do
 
   alias Dank.Dispensary
 
-  @valid_attrs %{" name": "some content", description: "some content", location: "some content"}
+  @valid_attrs %{description: "some content", location: "some content", name: "some content"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

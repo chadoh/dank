@@ -1,0 +1,23 @@
+<h2>Show dispensary</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @dispensary.name %>
+  </li>
+
+  <li>
+    <strong>Location:</strong>
+    <%= @dispensary.location %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @dispensary.description %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: dispensary_path(@conn, :edit, @dispensary) %>
+<%= link "Back", to: dispensary_path(@conn, :index) %>

@@ -2,7 +2,7 @@ defmodule Dank.DispensaryControllerTest do
   use Dank.ConnCase
 
   alias Dank.Dispensary
-  @valid_attrs %{" name": "some content", description: "some content", location: "some content"}
+  @valid_attrs %{description: "some content", location: "some content", name: "some content"}
   @invalid_attrs %{}
 
   test "lists all entries on index", %{conn: conn} do
