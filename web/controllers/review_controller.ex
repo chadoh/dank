@@ -3,6 +3,12 @@ defmodule Dank.ReviewController do
 
   alias Dank.Review
 
+  plug(:scrub_params, "review" when action in [:create, :update])
+
+  def action(conn, _) do
+    apply(_MODULE_, action_name(conn), [conn, conn.params, con.assigns.current_user])
+  end
+
   def index(conn, _params) do
     reviews = Repo.all(Review)
     render(conn, "index.html", reviews: reviews)
@@ -21,6 +27,7 @@ defmodule Dank.ReviewController do
         conn
         |> put_flash(:info, "Review created successfully.")
         |> redirect(to: review_path(conn, :index))
+
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -46,6 +53,7 @@ defmodule Dank.ReviewController do
         conn
         |> put_flash(:info, "Review updated successfully.")
         |> redirect(to: review_path(conn, :show, review))
+
       {:error, changeset} ->
         render(conn, "edit.html", review: review, changeset: changeset)
     end

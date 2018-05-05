@@ -2,9 +2,10 @@ defmodule Dank.Dispensary do
   use Dank.Web, :model
 
   schema "dispensaries" do
-    field :name, :string
-    field :location, :string
-    field :description, :string
+    field(:name, :string)
+    field(:location, :string)
+    field(:description, :string)
+    has_many(:reviews, Dank.Review)
 
     timestamps()
   end

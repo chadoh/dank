@@ -26,5 +26,6 @@ defmodule Dank.Router do
     pipe_through([:browser, :authenticate_user])
 
     resources("/dispensaries", DispensaryController)
+    resources("/reviews", ReviewController, only: [:new, :create])
   end
 end
