@@ -11,15 +11,12 @@ defmodule Dank.Review do
     timestamps()
   end
 
-  @required_fields ~w(dispensary rank review)
-  @optional_fields ~w()
-
   @doc """
   Builds a changeset based on the `struct` and `params`.
   """
   def changeset(struct, params \\ %{}) do
-    model
-    |> cast(params, @required_fields, @optional_fields)
+    struct
+    |> cast(params, [:dispensary, :rank, :review])
 
     # struct
     # |> cast(params, [:" dispensary", :rank, :review])
