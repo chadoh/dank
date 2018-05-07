@@ -18,11 +18,11 @@ defmodule Dank.Review do
   Builds a changeset based on the `struct` and `params`.
   """
   def changeset(struct, params \\ %{}) do
-    model
-    |> cast(params, @required_fields, @optional_fields)
+    # model
+    # |> cast(params, @required_fields, @optional_fields)
 
-    # struct
-    # |> cast(params, [:" dispensary", :rank, :review])
-    # |> validate_required([:" dispensary", :rank, :review])
+    struct
+    |> cast(params, @required_fields, @optional_fields)
+    |> validate_required([:" dispensary", :rank, :review])
   end
 end
