@@ -6,7 +6,7 @@ defmodule Dank.ReviewController do
   plug(:scrub_params, "review" when action in [:create, :update])
 
   def action(conn, _) do
-    apply(_MODULE_, action_name(conn), [conn, conn.params, con.assigns.current_user])
+    apply(__MODULE__, action_name(conn), [conn, conn.params, conn.assigns.current_user])
   end
 
   def index(conn, _params) do
