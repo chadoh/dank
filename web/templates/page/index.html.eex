@@ -1,5 +1,3 @@
-<div class="jumbotron">
   <h2><%= gettext "Welcome to %{name}", name: " So Dank" %></h2>
   <p class="lead">A place to review local dispensaries, checkout
   <br />their strains/prices, and see what your friends are saying!</p>
-</div>
