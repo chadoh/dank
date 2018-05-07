@@ -13,21 +13,21 @@
     </tr>
   </thead>
   <tbody>
-<%= for review <- @reviews do %>
-    <tr>
-      <td><%= review.user_id %></td>
-      <td><%= review.dispensary_id %></td>
-      <td><%= review. dispensary %></td>
-      <td><%= review.rank %></td>
-      <td><%= review.review %></td>
+    <%= for review <- @reviews do %>
+      <tr>
+        <td><%= review.user_id %></td>
+        <td><%= review.dispensary_id %></td>
+        <td><%= review. dispensary %></td>
+        <td><%= review.rank %></td>
+        <td><%= review.review %></td>
 
-      <td class="text-right">
-        <%= link "Show", to: review_path(@conn, :show, review), class: "btn btn-default btn-xs" %>
-        <%= link "Edit", to: review_path(@conn, :edit, review), class: "btn btn-default btn-xs" %>
-        <%= link "Delete", to: review_path(@conn, :delete, review), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
-      </td>
-    </tr>
-<% end %>
+        <td class="text-right">
+          <%= link "Show", to: review_path(@conn, :show, review), class: "btn btn-default btn-xs" %>
+          <%= link "Edit", to: review_path(@conn, :edit, review), class: "btn btn-default btn-xs" %>
+          <%= link "Delete", to: review_path(@conn, :delete, review), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
