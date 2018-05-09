@@ -1,21 +1,13 @@
-<h2>Listing dispensaries</h2>
+<h2 class="d-list">Dispensary List</h2>
 
 <table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th>Description</th>
-
-      <th></th>
-    </tr>
-  </thead>
   <tbody>
     <%= for dispensary <- @dispensaries do %>
       <tr>
         <td><%= dispensary.name %></td>
         <td><%= dispensary.location %></td>
         <td><%= dispensary.description %></td>
+        <%= link "Dispensary Record", to: dispensary_path(@conn, :show, dispensary), class: "btn-default btn-xs" %>
 
         <td class="text-right">
           <%= link "Show", to: dispensary_path(@conn, :show, dispensary), class: "btn btn-default btn-xs" %>

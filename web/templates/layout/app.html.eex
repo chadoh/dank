@@ -15,7 +15,7 @@
     <div class="container">
         <header class="header">
             <nav role="navigation">
-                <ol class="test">
+                <ul class="test">
                     <%= if @current_user do %>
                       <li>
                         <%= @current_user.username %>
@@ -33,7 +33,7 @@
                     <% end %>
                 </ul>
             </nav>
-            <span class="logo"></span>
+            <!-- <span class="logo"></span> -->
         </header>
         <p class="alert alert-info" role="alert">
             <%= get_flash(@conn, :info) %>
